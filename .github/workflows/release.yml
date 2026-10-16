@@ -50,5 +50,11 @@ jobs:
 
       # Ask the Go module proxy to fetch the new version so that
       # "go get" and pkg.go.dev see it right away.
+      # The proxy escapes upper-case letters in module paths as "!" plus
+      # the lower-case letter (DanielRis -> !daniel!ris).
       - name: Publish to the Go module proxy
-        run: curl -fsS "https://proxy.golang.org/github.com/${GITHUB_REPOSITORY}/@v/${GITHUB_REF_NAME}.info"
+        run: |
+          module="$(go list -m)"
+          escaped="$(printf '%s' "$module" | sed -E 's/([A-Z])/!\L\1/g')"
+          curl -fsS --retry 5 --retry-all-errors --retry-delay 10 \
+            "https://proxy.golang.org/${escaped}/@v/${GITHUB_REF_NAME}.info"
