@@ -15,7 +15,7 @@ import (
 	"os"
 	"path/filepath"
 
-	sudoers "github.com/risticd/go-sudoer-validation"
+	sudoers "github.com/DanielRis/go-sudoer-validation"
 )
 
 func main() {

@@ -19,7 +19,7 @@ diagnostics have the same messages and the same `file:line:column` positions.
 ## Library
 
 ```go
-import sudoers "github.com/risticd/go-sudoer-validation"
+import sudoers "github.com/DanielRis/go-sudoer-validation"
 
 res := sudoers.Validate(content, sudoers.Options{
 	Filename: "/etc/sudoers", // used in diagnostics and to resolve relative includes
@@ -78,7 +78,7 @@ errors.
 ## Command
 
 ```
-go install github.com/risticd/go-sudoer-validation/cmd/sudoers-validate@latest
+go install github.com/DanielRis/go-sudoer-validation/cmd/sudoers-validate@latest
 
 sudoers-validate [-s] [-q] [-no-includes] [-hostname name] file...
 ```

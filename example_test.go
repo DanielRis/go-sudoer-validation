@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	sudoers "github.com/risticd/go-sudoer-validation"
+	sudoers "github.com/DanielRis/go-sudoer-validation"
 )
 
 func ExampleValidate() {
