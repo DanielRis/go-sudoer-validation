@@ -1,0 +1,44 @@
+# Release configuration for the sudoers-validate command.
+# Run by .github/workflows/release.yml when a vX.Y.Z tag is pushed.
+# Test locally with: goreleaser release --snapshot --clean
+version: 2
+
+project_name: sudoers-validate
+
+builds:
+  - id: sudoers-validate
+    main: ./cmd/sudoers-validate
+    binary: sudoers-validate
+    env:
+      - CGO_ENABLED=0
+    goos: [linux, darwin, freebsd, windows]
+    goarch: [amd64, arm64]
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w -X main.version=v{{ .Version }}
+    # Reproducible builds: same inputs, same binaries.
+    mod_timestamp: "{{ .CommitTimestamp }}"
+
+archives:
+  - formats: [tar.gz]
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - README.md
+
+checksum:
+  name_template: checksums.txt
+
+changelog:
+  use: github
+  sort: asc
+  filters:
+    exclude:
+      - "^Merge "
+
+release:
+  # Tags such as v1.2.0-rc.1 are published as pre-releases.
+  prerelease: auto
