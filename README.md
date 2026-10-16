@@ -184,6 +184,6 @@ A few reports differ on purpose:
 
 ## License
 
-The files in `testdata/regress/` and `internal/gen/def_data.in` come from
+[MIT](LICENSE). The files in `testdata/regress/` and `internal/gen/def_data.in` come from
 [sudo](https://www.sudo.ws/) and are covered by its ISC-style license
 (`testdata/regress/LICENSE.md`).
