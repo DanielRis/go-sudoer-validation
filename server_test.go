@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"os"
 	"reflect"
 	"strings"
 	"sync"
@@ -120,9 +121,12 @@ func TestValidateUploadedBundle(t *testing.T) {
 // Untrusted input must not make validation slow: the time taken must
 // grow linearly with the input. Quadrupling the input of a quadratic
 // algorithm takes 16 times as long; allow up to 8 for noise.
+//
+// Timing depends on the machine, so this test only runs when
+// SUDOERS_TIMING_TESTS=1 (CI runs it in its own job).
 func TestHostileInputIsLinear(t *testing.T) {
-	if testing.Short() {
-		t.Skip("timing test")
+	if os.Getenv("SUDOERS_TIMING_TESTS") != "1" {
+		t.Skip("set SUDOERS_TIMING_TESTS=1 to run timing tests")
 	}
 	gens := map[string]func(n int) string{
 		"long word":       func(n int) string { return "bob ALL = /bin/" + strings.Repeat("x", n) + "\n" },
