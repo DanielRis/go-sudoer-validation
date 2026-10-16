@@ -1,0 +1,2 @@
+Defaults passwd_tries=-1
+Defaults loglinelen=99999999999

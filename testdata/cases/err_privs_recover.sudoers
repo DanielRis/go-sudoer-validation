@@ -1,0 +1,2 @@
+root ALL=/bin/ls : bogus stuff : ALL=/bin/ls
+root ALL=ALL

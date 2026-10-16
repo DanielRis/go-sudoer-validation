@@ -1,0 +1,12 @@
+[default]
+status: invalid
+err_default_novalue.sudoers:1:11: no value specified for "passwd_tries"
+err_default_novalue.sudoers:2:22: no value specified for "passwd_tries"
+err_default_novalue.sudoers:3:22: no value specified for "lecture_file"
+err_default_novalue.sudoers:4:21: no value specified for "secure_path"
+[strict]
+status: invalid
+err_default_novalue.sudoers:1:11: no value specified for "passwd_tries"
+err_default_novalue.sudoers:2:22: no value specified for "passwd_tries"
+err_default_novalue.sudoers:3:22: no value specified for "lecture_file"
+err_default_novalue.sudoers:4:21: no value specified for "secure_path"

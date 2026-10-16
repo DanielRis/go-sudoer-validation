@@ -1,0 +1,1 @@
+bob ALL = (:wheel) /bin/ls, () /bin/cat, (:) /bin/x, (root, !operator : wheel, !staff) /bin/y, (#0) /bin/z, (%#0) /bin/w

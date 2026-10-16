@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_empty_string.sudoers:1:19: empty string
+[strict]
+status: invalid
+err_empty_string.sudoers:1:19: empty string

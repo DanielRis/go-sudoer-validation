@@ -1,0 +1,8 @@
+[default]
+status: invalid
+err_privs_recover.sudoers:1:26: syntax error
+err_privs_recover.sudoers:1:26: syntax error
+[strict]
+status: invalid
+err_privs_recover.sudoers:1:26: syntax error
+err_privs_recover.sudoers:1:26: syntax error

@@ -1,0 +1,6 @@
+[default]
+status: invalid
+test11.in:1:6: syntax error
+[strict]
+status: invalid
+test11.in:1:6: syntax error

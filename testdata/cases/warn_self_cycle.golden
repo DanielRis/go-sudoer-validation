@@ -1,0 +1,6 @@
+[default]
+status: valid
+warn_self_cycle.sudoers:1:12: cycle in User_Alias "U"
+[strict]
+status: invalid
+warn_self_cycle.sudoers:1:12: cycle in User_Alias "U"

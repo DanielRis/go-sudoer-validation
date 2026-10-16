@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_ipv6.sudoers:1:5: invalid IPv6 address
+[strict]
+status: invalid
+err_ipv6.sudoers:1:5: invalid IPv6 address

@@ -1,0 +1,2 @@
+Defaults rlimit_core=lots
+Defaults rlimit_nofile=10,

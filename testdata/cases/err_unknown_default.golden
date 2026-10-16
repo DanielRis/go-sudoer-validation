@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_unknown_default.sudoers:1:15: unknown defaults entry "bogus"
+[strict]
+status: invalid
+err_unknown_default.sudoers:1:15: unknown defaults entry "bogus"

@@ -1,0 +1,1 @@
+bob ALL = /usr/bin/*, /bin/[a-z]*

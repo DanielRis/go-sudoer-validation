@@ -1,0 +1,8 @@
+[default]
+status: invalid
+err_notbefore.sudoers:1:26: invalid notbefore value
+err_notbefore.sudoers:2:25: invalid notafter value
+[strict]
+status: invalid
+err_notbefore.sudoers:1:26: invalid notbefore value
+err_notbefore.sudoers:2:25: invalid notafter value

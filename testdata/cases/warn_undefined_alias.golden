@@ -1,0 +1,14 @@
+[default]
+status: valid
+warn_undefined_alias.sudoers:1:19: Cmnd_Alias "FOO" referenced but not defined
+warn_undefined_alias.sudoers:2:13: Cmnd_Alias "BAR" referenced but not defined
+warn_undefined_alias.sudoers:3:11: User_Alias "UA" referenced but not defined
+warn_undefined_alias.sudoers:4:17: Host_Alias "HA" referenced but not defined
+warn_undefined_alias.sudoers:4:17: Runas_Alias "RA" referenced but not defined
+[strict]
+status: invalid
+warn_undefined_alias.sudoers:1:19: Cmnd_Alias "FOO" referenced but not defined
+warn_undefined_alias.sudoers:2:13: Cmnd_Alias "BAR" referenced but not defined
+warn_undefined_alias.sudoers:3:11: User_Alias "UA" referenced but not defined
+warn_undefined_alias.sudoers:4:17: Host_Alias "HA" referenced but not defined
+warn_undefined_alias.sudoers:4:17: Runas_Alias "RA" referenced but not defined

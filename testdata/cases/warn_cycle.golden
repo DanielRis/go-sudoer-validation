@@ -1,0 +1,6 @@
+[default]
+status: valid
+warn_cycle.sudoers:2:12: cycle in Cmnd_Alias "A"
+[strict]
+status: invalid
+warn_cycle.sudoers:2:12: cycle in Cmnd_Alias "A"

@@ -1,0 +1,14 @@
+[default]
+status: invalid
+test18.in:4:21: invalid timeout value
+test18.in:5:21: invalid timeout value
+test18.in:6:21: invalid timeout value
+test18.in:7:21: invalid timeout value
+test18.in:8:21: invalid timeout value
+[strict]
+status: invalid
+test18.in:4:21: invalid timeout value
+test18.in:5:21: invalid timeout value
+test18.in:6:21: invalid timeout value
+test18.in:7:21: invalid timeout value
+test18.in:8:21: invalid timeout value

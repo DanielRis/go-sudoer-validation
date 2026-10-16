@@ -1,0 +1,12 @@
+[default]
+status: valid
+warn_unused_alias.sudoers:3:12: unused Host_Alias "A"
+warn_unused_alias.sudoers:1:12: unused User_Alias "A"
+warn_unused_alias.sudoers:2:12: unused User_Alias "B"
+warn_unused_alias.sudoers:4:12: unused Cmnd_Alias "C"
+[strict]
+status: valid
+warn_unused_alias.sudoers:3:12: unused Host_Alias "A"
+warn_unused_alias.sudoers:1:12: unused User_Alias "A"
+warn_unused_alias.sudoers:2:12: unused User_Alias "B"
+warn_unused_alias.sudoers:4:12: unused Cmnd_Alias "C"

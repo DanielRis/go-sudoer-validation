@@ -1,0 +1,5 @@
+bob ALL = foo
+alice ALL = (
+Defaults:
+%wheel ALL = ALL
+x y z

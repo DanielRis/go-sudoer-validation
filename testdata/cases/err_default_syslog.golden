@@ -1,0 +1,8 @@
+[default]
+status: invalid
+err_default_syslog.sudoers:1:17: value "bogus" is invalid for option "syslog"
+err_default_syslog.sudoers:2:25: value "loud" is invalid for option "syslog_goodpri"
+[strict]
+status: invalid
+err_default_syslog.sudoers:1:17: value "bogus" is invalid for option "syslog"
+err_default_syslog.sudoers:2:25: value "loud" is invalid for option "syslog_goodpri"

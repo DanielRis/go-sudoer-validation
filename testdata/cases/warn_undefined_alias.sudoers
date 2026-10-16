@@ -1,0 +1,4 @@
+root ALL=(ALL) FOO
+root ALL=BAR
+UA ALL=ALL
+root HA=(RA) ALL

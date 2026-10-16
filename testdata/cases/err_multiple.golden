@@ -1,0 +1,12 @@
+[default]
+status: invalid
+err_multiple.sudoers:1:11: expected a fully-qualified path name
+err_multiple.sudoers:2:14: syntax error
+err_multiple.sudoers:3:9: syntax error
+err_multiple.sudoers:5:5: syntax error
+[strict]
+status: invalid
+err_multiple.sudoers:1:11: expected a fully-qualified path name
+err_multiple.sudoers:2:14: syntax error
+err_multiple.sudoers:3:9: syntax error
+err_multiple.sudoers:5:5: syntax error

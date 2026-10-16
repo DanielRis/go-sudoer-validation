@@ -1,0 +1,4 @@
+User_Alias U = "foo bar", "%baz qux"
+"joe smith" ALL = ALL
+U ALL = ALL
+Defaults:"you" set_home

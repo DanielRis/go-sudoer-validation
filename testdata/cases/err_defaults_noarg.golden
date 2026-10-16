@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_defaults_noarg.sudoers:1:9: syntax error
+[strict]
+status: invalid
+err_defaults_noarg.sudoers:1:9: syntax error

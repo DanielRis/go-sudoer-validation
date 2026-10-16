@@ -1,0 +1,3 @@
+Cmnd_Alias A=B
+Cmnd_Alias B=A
+root ALL=A

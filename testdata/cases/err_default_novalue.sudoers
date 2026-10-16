@@ -1,0 +1,4 @@
+Defaults !passwd_tries
+Defaults passwd_tries
+Defaults lecture_file
+Defaults secure_path

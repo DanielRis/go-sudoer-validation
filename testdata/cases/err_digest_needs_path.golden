@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_digest_needs_path.sudoers:1:83: a digest requires a path name
+[strict]
+status: invalid
+err_digest_needs_path.sudoers:1:83: a digest requires a path name

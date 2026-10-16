@@ -1,0 +1,1 @@
+bob ALL = (root) NOPASSWD: /bin/ls, /bin/cat, (operator) /bin/echo

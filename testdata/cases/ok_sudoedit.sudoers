@@ -1,0 +1,1 @@
+bob ALL = sudoedit /etc/hosts, sudoedit /etc/*.conf

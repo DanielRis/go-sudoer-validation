@@ -1,0 +1,6 @@
+[default]
+status: invalid
+test4.in:7:1: duplicate User_Alias "FOO", previously defined at test4.in:2:12
+[strict]
+status: invalid
+test4.in:7:1: duplicate User_Alias "FOO", previously defined at test4.in:2:12

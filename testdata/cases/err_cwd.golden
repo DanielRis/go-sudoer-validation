@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_cwd.sudoers:1:20: values for "CWD" must start with a '/', '~', or '*'
+[strict]
+status: invalid
+err_cwd.sudoers:1:20: values for "CWD" must start with a '/', '~', or '*'

@@ -1,0 +1,2 @@
+bob ALL = (root) CWD=/tmp CHROOT=/srv ROLE=sysadm_r TYPE=sysadm_t TIMEOUT=1h30m NOTBEFORE=20200101000000Z NOTAFTER=2030010112 /bin/ls
+bob ALL = CWD=* /bin/true, CWD=~ /bin/false

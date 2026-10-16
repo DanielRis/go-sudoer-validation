@@ -1,0 +1,4 @@
+bob ALL = (#1000) ALL
+#1000 ALL = ALL
+%#100 ALL = ALL
+%:nonunix ALL = ALL

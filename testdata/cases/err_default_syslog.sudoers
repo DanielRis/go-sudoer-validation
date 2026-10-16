@@ -1,0 +1,2 @@
+Defaults syslog=bogus
+Defaults syslog_goodpri=loud

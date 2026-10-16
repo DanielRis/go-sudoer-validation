@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_default_unquoted_comma.sudoers:1:29: syntax error
+[strict]
+status: invalid
+err_default_unquoted_comma.sudoers:1:29: syntax error

@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_default_tuple.sudoers:1:18: value "sometimes" is invalid for option "lecture"
+[strict]
+status: invalid
+err_default_tuple.sudoers:1:18: value "sometimes" is invalid for option "lecture"

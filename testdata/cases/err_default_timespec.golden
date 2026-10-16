@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_default_timespec.sudoers:1:28: value "1.5x" is invalid for option "timestamp_timeout"
+[strict]
+status: invalid
+err_default_timespec.sudoers:1:28: value "1.5x" is invalid for option "timestamp_timeout"

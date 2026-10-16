@@ -1,0 +1,2 @@
+bob ALL, !web1 = ALL, !/bin/su, !!/bin/sh
+!bob ALL = ALL

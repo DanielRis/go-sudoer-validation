@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_timeout_option.sudoers:1:24: invalid timeout value
+[strict]
+status: invalid
+err_timeout_option.sudoers:1:24: invalid timeout value

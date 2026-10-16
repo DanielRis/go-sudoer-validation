@@ -1,0 +1,8 @@
+[default]
+status: invalid
+err_reserved_alias.sudoers:1:12: syntax error, reserved word ALL used as an alias name
+err_reserved_alias.sudoers:2:12: syntax error, reserved word CMND_TIMEOUT used as an alias name
+[strict]
+status: invalid
+err_reserved_alias.sudoers:1:12: syntax error, reserved word ALL used as an alias name
+err_reserved_alias.sudoers:2:12: syntax error, reserved word CMND_TIMEOUT used as an alias name

@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_unterminated_regex.sudoers:1:36: unterminated regular expression
+[strict]
+status: invalid
+err_unterminated_regex.sudoers:1:36: unterminated regular expression

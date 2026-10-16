@@ -1,0 +1,1 @@
+root ALL= sha256:abcd /bin/ls

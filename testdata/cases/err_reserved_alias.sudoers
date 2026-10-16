@@ -1,0 +1,2 @@
+User_Alias ALL = bob
+Cmnd_Alias TIMEOUT = /bin/ls

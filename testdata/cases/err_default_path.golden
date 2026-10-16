@@ -1,0 +1,8 @@
+[default]
+status: invalid
+err_default_path.sudoers:1:18: values for "logfile" must start with a '/'
+err_default_path.sudoers:2:20: values for "iolog_dir" must start with a '/'
+[strict]
+status: invalid
+err_default_path.sudoers:1:18: values for "logfile" must start with a '/'
+err_default_path.sudoers:2:20: values for "iolog_dir" must start with a '/'

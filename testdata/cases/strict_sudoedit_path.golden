@@ -1,0 +1,5 @@
+[default]
+status: valid
+[strict]
+status: invalid
+strict_sudoedit_path.sudoers:1:12: sudoedit should not be specified with a path

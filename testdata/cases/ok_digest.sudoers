@@ -1,0 +1,2 @@
+bob ALL = sha224:d06381f81b2d9a3d1ae2ceb4d33f4c7a3e23d5a3a5b3c5a4c4c2b4c3 /bin/ls
+bob ALL = sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef /bin/ls, sha512:z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg== /bin/cat

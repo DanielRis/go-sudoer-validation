@@ -1,0 +1,3 @@
+root ALL = ALL # trailing comment
+Defaults env_reset # comment
+# Host_Alias X = y

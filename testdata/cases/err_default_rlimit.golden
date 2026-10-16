@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_default_rlimit.sudoers:2:27: syntax error
+[strict]
+status: invalid
+err_default_rlimit.sudoers:2:27: syntax error

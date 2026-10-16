@@ -1,0 +1,6 @@
+[default]
+status: valid
+warn_chroot.sudoers:1:23: "CHROOT" is deprecated
+[strict]
+status: valid
+warn_chroot.sudoers:1:23: "CHROOT" is deprecated

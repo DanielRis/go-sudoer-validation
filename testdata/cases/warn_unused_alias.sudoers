@@ -1,0 +1,5 @@
+User_Alias A=b
+User_Alias B=c
+Host_Alias A=h
+Cmnd_Alias C=/bin/ls
+root ALL=ALL

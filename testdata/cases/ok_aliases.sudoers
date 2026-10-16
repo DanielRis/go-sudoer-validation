@@ -1,0 +1,5 @@
+User_Alias ADMINS = alice, bob, %wheel
+Host_Alias SERVERS = web1, db1, 10.0.0.0/8, 192.168.1.1/255.255.255.0
+Runas_Alias OP = root, operator
+Cmnd_Alias SHUTDOWN = /sbin/shutdown, /sbin/reboot : PKG = /usr/bin/apt *
+ADMINS SERVERS = (OP) NOPASSWD: SHUTDOWN, PASSWD: PKG

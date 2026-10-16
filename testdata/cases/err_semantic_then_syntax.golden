@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_semantic_then_syntax.sudoers:2:11: expected a fully-qualified path name
+[strict]
+status: invalid
+err_semantic_then_syntax.sudoers:2:11: expected a fully-qualified path name

@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_unclosed_runas.sudoers:1:13: syntax error
+[strict]
+status: invalid
+err_unclosed_runas.sudoers:1:13: syntax error

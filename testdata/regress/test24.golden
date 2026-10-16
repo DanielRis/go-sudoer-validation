@@ -1,0 +1,12 @@
+[default]
+status: valid
+test24.in:7:20: "CHROOT" is deprecated
+test24.in:8:29: "CHROOT" is deprecated
+test24.in:4:20: "runchroot" is deprecated and will be removed in a future sudo release
+test24.in:5:22: "runchroot" is deprecated and will be removed in a future sudo release
+[strict]
+status: valid
+test24.in:7:20: "CHROOT" is deprecated
+test24.in:8:29: "CHROOT" is deprecated
+test24.in:4:20: "runchroot" is deprecated and will be removed in a future sudo release
+test24.in:5:22: "runchroot" is deprecated and will be removed in a future sudo release

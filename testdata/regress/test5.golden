@@ -1,0 +1,8 @@
+[default]
+status: invalid
+test5.in:2:19: empty string
+test5.in:3:2: empty string
+[strict]
+status: invalid
+test5.in:2:19: empty string
+test5.in:3:2: empty string

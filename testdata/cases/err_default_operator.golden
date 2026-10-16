@@ -1,0 +1,8 @@
+[default]
+status: invalid
+err_default_operator.sudoers:2:17: invalid operator "+=" for "umask"
+err_default_operator.sudoers:3:19: invalid operator "-=" for "lecture"
+[strict]
+status: invalid
+err_default_operator.sudoers:2:17: invalid operator "+=" for "umask"
+err_default_operator.sudoers:3:19: invalid operator "-=" for "lecture"

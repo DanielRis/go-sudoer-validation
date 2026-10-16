@@ -1,0 +1,2 @@
+root ALL=(ALL) NOTBEFORE=2020 /bin/ls
+root ALL=(ALL) NOTAFTER=20200101000000X /bin/ls

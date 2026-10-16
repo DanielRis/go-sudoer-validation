@@ -1,0 +1,1 @@
+bob ALL = /bin/ls "", /usr/bin/kill -9 *, /bin/echo a\,b\:c\=d

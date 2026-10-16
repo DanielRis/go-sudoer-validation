@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_empty_netgroup.sudoers:1:5: empty netgroup
+[strict]
+status: invalid
+err_empty_netgroup.sudoers:1:5: empty netgroup

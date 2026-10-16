@@ -1,0 +1,6 @@
+[default]
+status: valid
+test26.in:6:20: "runchroot" is deprecated and will be removed in a future sudo release
+[strict]
+status: valid
+test26.in:6:20: "runchroot" is deprecated and will be removed in a future sudo release

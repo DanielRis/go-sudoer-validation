@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_unterminated_string.sudoers:1:19: unexpected line break in string
+[strict]
+status: invalid
+err_unterminated_string.sudoers:1:19: unexpected line break in string

@@ -1,0 +1,2 @@
+Defaults command_timeout=5x
+Defaults command_timeout=1h1d

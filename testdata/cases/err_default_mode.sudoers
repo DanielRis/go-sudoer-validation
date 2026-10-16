@@ -1,0 +1,2 @@
+Defaults umask=0999
+Defaults umask=1777

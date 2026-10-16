@@ -1,0 +1,1 @@
+bob ALL = ^/usr/bin/(ls|cat)$, /bin/grep ^[a-z]+$

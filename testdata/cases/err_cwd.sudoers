@@ -1,0 +1,1 @@
+root ALL=(ALL) CWD=foo /bin/ls

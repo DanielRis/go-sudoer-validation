@@ -1,0 +1,16 @@
+[default]
+status: invalid
+test7.in:2:21: empty group
+test7.in:3:22: empty group
+test7.in:4:21: empty netgroup
+test7.in:5:19: empty group
+test7.in:6:19: empty group
+test7.in:7:19: empty netgroup
+[strict]
+status: invalid
+test7.in:2:21: empty group
+test7.in:3:22: empty group
+test7.in:4:21: empty netgroup
+test7.in:5:19: empty group
+test7.in:6:19: empty group
+test7.in:7:19: empty netgroup

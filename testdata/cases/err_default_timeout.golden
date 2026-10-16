@@ -1,0 +1,8 @@
+[default]
+status: invalid
+err_default_timeout.sudoers:1:26: value "5x" is invalid for option "command_timeout"
+err_default_timeout.sudoers:2:26: value "1h1d" is invalid for option "command_timeout"
+[strict]
+status: invalid
+err_default_timeout.sudoers:1:26: value "5x" is invalid for option "command_timeout"
+err_default_timeout.sudoers:2:26: value "1h1d" is invalid for option "command_timeout"

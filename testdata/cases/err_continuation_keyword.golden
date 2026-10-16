@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_continuation_keyword.sudoers:2:1: invalid line continuation
+[strict]
+status: invalid
+err_continuation_keyword.sudoers:2:1: invalid line continuation

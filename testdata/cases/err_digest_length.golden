@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_digest_length.sudoers:1:30: syntax error
+[strict]
+status: invalid
+err_digest_length.sudoers:1:30: syntax error

@@ -1,0 +1,8 @@
+[default]
+status: invalid
+err_default_mode.sudoers:1:16: value "0999" is invalid for option "umask"
+err_default_mode.sudoers:2:16: value "1777" is invalid for option "umask"
+[strict]
+status: invalid
+err_default_mode.sudoers:1:16: value "0999" is invalid for option "umask"
+err_default_mode.sudoers:2:16: value "1777" is invalid for option "umask"

@@ -1,0 +1,6 @@
+[default]
+status: invalid
+test8.in:8:20: unexpected line break in string
+[strict]
+status: invalid
+test8.in:8:20: unexpected line break in string

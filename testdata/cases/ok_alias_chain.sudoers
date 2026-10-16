@@ -1,0 +1,4 @@
+Cmnd_Alias A = B, /bin/ls
+Cmnd_Alias B = C
+Cmnd_Alias C = /bin/cat
+bob ALL = A

@@ -1,0 +1,5 @@
+bob ALL = /bin/ls, \
+	/bin/cat, \
+  /bin/echo
+Defaults env_keep += "HOME \
+	PATH"

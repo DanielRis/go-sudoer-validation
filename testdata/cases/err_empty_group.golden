@@ -1,0 +1,8 @@
+[default]
+status: invalid
+err_empty_group.sudoers:1:18: empty group
+err_empty_group.sudoers:2:20: empty group
+[strict]
+status: invalid
+err_empty_group.sudoers:1:18: empty group
+err_empty_group.sudoers:2:20: empty group

@@ -1,0 +1,12 @@
+[default]
+status: invalid
+test29.in:5:43: unterminated regular expression
+test29.in:7:12: expected a fully-qualified path name
+test29.in:9:28: unterminated regular expression
+test29.in:11:29: unterminated regular expression
+[strict]
+status: invalid
+test29.in:5:43: unterminated regular expression
+test29.in:7:12: expected a fully-qualified path name
+test29.in:9:28: unterminated regular expression
+test29.in:11:29: unterminated regular expression

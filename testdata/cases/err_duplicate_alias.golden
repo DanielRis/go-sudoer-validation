@@ -1,0 +1,6 @@
+[default]
+status: invalid
+err_duplicate_alias.sudoers:2:21: duplicate Cmnd_Alias "A", previously defined at err_duplicate_alias.sudoers:1:12
+[strict]
+status: invalid
+err_duplicate_alias.sudoers:2:21: duplicate Cmnd_Alias "A", previously defined at err_duplicate_alias.sudoers:1:12

@@ -1,0 +1,8 @@
+[default]
+status: invalid
+err_default_uint.sudoers:1:23: value "-1" is invalid for option "passwd_tries"
+err_default_uint.sudoers:2:21: value "99999999999" is invalid for option "loglinelen"
+[strict]
+status: invalid
+err_default_uint.sudoers:1:23: value "-1" is invalid for option "passwd_tries"
+err_default_uint.sudoers:2:21: value "99999999999" is invalid for option "loglinelen"

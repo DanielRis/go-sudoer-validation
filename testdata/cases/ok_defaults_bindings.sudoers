@@ -1,0 +1,12 @@
+User_Alias U = bob
+Host_Alias H = web1
+Runas_Alias R = root
+Cmnd_Alias C = /bin/ls
+Defaults:U !lecture
+Defaults@H fqdn
+Defaults>R env_reset
+Defaults!C noexec
+Defaults!/bin/sh log_output
+Defaults!sudoedit !requiretty
+Defaults:%wheel,!bob lecture
+Defaults:#1000 lecture

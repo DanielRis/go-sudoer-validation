@@ -1,0 +1,6 @@
+[default]
+status: valid
+ok_options.sudoers:1:34: "CHROOT" is deprecated
+[strict]
+status: valid
+ok_options.sudoers:1:34: "CHROOT" is deprecated
