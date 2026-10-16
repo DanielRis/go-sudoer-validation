@@ -25,7 +25,9 @@ import (
 // differences in reporting are normalized: visudo reports a missing
 // include file without a position, and for "#" followed by a digit in
 // a Defaults line (or an include path such as ":") it prints
-// strerror(errno), whatever errno holds.
+// strerror(errno), whatever errno holds. Regular expression errors are
+// compared by position only, since regerror(3) wording varies by libc,
+// as are duplicate aliases, whose wording changed in sudo 1.9.16.
 // Files that include absolute paths are skipped since visudo would read
 // them from the host.
 func TestOracle(t *testing.T) {
@@ -55,6 +57,10 @@ func TestOracle(t *testing.T) {
 				Filename: name, Strict: strict, FS: os.DirFS(dir),
 			}))
 			got = missingInclude.ReplaceAllString(got, "visudo: $1: No such file or directory")
+			got = regexError.ReplaceAllString(got, "$1: <regex error>")
+			want = regexError.ReplaceAllString(want, "$1: <regex error>")
+			got = duplicateAlias.ReplaceAllString(got, `$1: duplicate alias "$2"`)
+			want = duplicateAlias.ReplaceAllString(want, `$1: duplicate alias "$2"`)
 			if got != want {
 				failures++
 				t.Errorf("mismatch (strict=%v) for input:\n%s\n--- got\n%s--- want\n%s",
@@ -69,6 +75,19 @@ var (
 	absInclude     = regexp.MustCompile(`(?m)(@include|^#include)(dir)?[ \t]+"?/`)
 	missingInclude = regexp.MustCompile(`(?m)^x\d+:\d+:\d+: (.*): No such file or directory$`)
 	errnoMessage   = regexp.MustCompile(`(?m)^(x\d+:\d+:\d+): (No such file or directory|Success|Undefined error: 0)$`)
+	// regerror(3) wording differs between BSD/macOS and glibc.
+	regexError = regexp.MustCompile(`(?m)^(x\d+:\d+:\d+): (` + strings.Join([]string{
+		`parentheses not balanced`, `brackets \(\[ \]\) not balanced`,
+		`braces not balanced`, `invalid character range`, `invalid character class`,
+		`trailing backslash \(\\\)`, `repetition-operator operand invalid`,
+		`invalid repetition count\(s\)`, `empty \(sub\)expression`,
+		`Unmatched \( or \\\(`, `Unmatched \) or \\\)`, `Unmatched \[.*`,
+		`Unmatched \\\{`, `Invalid range end`, `Invalid character class name`,
+		`Trailing backslash`, `Invalid preceding regular expression`,
+		`Invalid content of \\\{\\\}`, `Invalid regular expression`,
+	}, "|") + `)$`)
+	// sudo before 1.9.16 words duplicate aliases differently.
+	duplicateAlias = regexp.MustCompile(`(?m)^(x\d+:\d+:\d+): (?:duplicate \w+_Alias|Alias) "([^"]*)"(?:, previously defined at .*| already defined)$`)
 	// An include path with no non-empty components is never opened, so
 	// visudo reports a stale errno.
 	staleIncludeErrno = regexp.MustCompile(`(?m)^(visudo: [^\n]*): (Success|Undefined error: 0)$`)
