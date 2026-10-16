@@ -99,3 +99,22 @@ func TestUsage(t *testing.T) {
 		t.Fatalf("no args: code=%d", code)
 	}
 }
+
+func TestVersion(t *testing.T) {
+	old := version
+	defer func() { version = old }()
+
+	version = "v1.2.3"
+	code, out, _ := runCLI(t, "", "-version")
+	if code != 0 || out != "sudoers-validate v1.2.3\n" {
+		t.Fatalf("code=%d out=%q", code, out)
+	}
+
+	// Without a version stamped in at link time, fall back to the
+	// module version from the build info ("(devel)" in tests).
+	version = ""
+	code, out, _ = runCLI(t, "", "-version")
+	if code != 0 || !strings.HasPrefix(out, "sudoers-validate ") || out == "sudoers-validate \n" {
+		t.Fatalf("code=%d out=%q", code, out)
+	}
+}

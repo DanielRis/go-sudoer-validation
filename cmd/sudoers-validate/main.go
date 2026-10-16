@@ -3,6 +3,7 @@
 // Usage:
 //
 //	sudoers-validate [-s] [-q] [-no-includes] [-hostname name] file...
+//	sudoers-validate -version
 //
 // A file named "-" is read from standard input. The exit status is 0
 // when every file is valid, 1 when any is invalid and 2 on usage errors.
@@ -14,9 +15,24 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"runtime/debug"
 
 	sudoers "github.com/DanielRis/go-sudoer-validation"
 )
+
+// version is set at link time by release builds
+// (-ldflags "-X main.version=v1.2.3").
+var version string
+
+func buildVersion() string {
+	if version != "" {
+		return version
+	}
+	if info, ok := debug.ReadBuildInfo(); ok && info.Main.Version != "" {
+		return info.Main.Version // set by "go install ...@v1.2.3"
+	}
+	return "(devel)"
+}
 
 func main() {
 	os.Exit(run(os.Args[1:], os.Stdin, os.Stdout, os.Stderr))
@@ -29,12 +45,18 @@ func run(args []string, stdin io.Reader, stdout, stderr io.Writer) int {
 	quiet := flags.Bool("q", false, "quiet: only report errors through the exit status")
 	noIncludes := flags.Bool("no-includes", false, "do not read @include and @includedir files")
 	hostname := flags.String("hostname", "", "host name substituted for %h in include paths")
+	showVersion := flags.Bool("version", false, "print the version and exit")
 	flags.Usage = func() {
 		fmt.Fprintln(stderr, "usage: sudoers-validate [-s] [-q] [-no-includes] [-hostname name] file...")
+		fmt.Fprintln(stderr, "       sudoers-validate -version")
 		flags.PrintDefaults()
 	}
 	if err := flags.Parse(args); err != nil {
 		return 2
+	}
+	if *showVersion {
+		fmt.Fprintln(stdout, "sudoers-validate", buildVersion())
+		return 0
 	}
 	if flags.NArg() == 0 {
 		flags.Usage()
