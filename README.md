@@ -1,5 +1,8 @@
 # go-sudoer-validation
 
+[![CI](https://github.com/DanielRis/go-sudoer-validation/actions/workflows/ci.yml/badge.svg)](https://github.com/DanielRis/go-sudoer-validation/actions/workflows/ci.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/DanielRis/go-sudoer-validation.svg)](https://pkg.go.dev/github.com/DanielRis/go-sudoer-validation)
+
 A pure Go validator for [sudoers(5)](https://www.sudo.ws/docs/man/sudoers.man/)
 files that applies the same checks as `visudo -c`.
 
@@ -17,6 +20,9 @@ Because of that, a file this package accepts is one `visudo -c` accepts, and
 diagnostics have the same messages and the same `file:line:column` positions.
 
 ## Library
+
+Requires Go 1.25 or later. CI tests the minimum version and the latest
+stable release.
 
 ```go
 import sudoers "github.com/DanielRis/go-sudoer-validation"
@@ -53,7 +59,7 @@ json.NewEncoder(w).Encode(res)
 * All functions are safe to call concurrently. Each call keeps its own
   state, and the test suite runs under `-race`.
 * Validation time grows linearly with input size (about 0.5 s per MB in the
-  worst case), and `TestHostileInputIsLinear` guards against regressions.
+  worst case). `TestHostileInputIsLinear` guards against regressions.
   You should still cap the request size, for example with
   `http.MaxBytesReader`.
 * An upload that contains a main file plus `sudoers.d` files can be checked as
@@ -77,10 +83,15 @@ errors.
 
 ## Command
 
+Prebuilt binaries for Linux, macOS, FreeBSD and Windows are attached to each
+[GitHub release](https://github.com/DanielRis/go-sudoer-validation/releases),
+or install from source:
+
 ```
 go install github.com/DanielRis/go-sudoer-validation/cmd/sudoers-validate@latest
 
 sudoers-validate [-s] [-q] [-no-includes] [-hostname name] file...
+sudoers-validate -version
 ```
 
 It prints diagnostics to stderr and `file: parsed OK` to stdout. The exit
@@ -89,7 +100,8 @@ errors. Use `-` to read standard input. Includes are followed by default.
 
 ## Tests
 
-Development was test-first. The suite has four layers:
+Development was test-first. `go test ./...` runs the deterministic tests.
+The suite has these layers:
 
 * `TestLexerTrace` replays sudo's own regression suite
   (`testdata/regress/*.in`). Each `*.toke.ok` file is the token trace that
@@ -101,7 +113,44 @@ Development was test-first. The suite has four layers:
 * `TestOracle` generates random sudoers files and compares each one with a
   live `visudo`:
   `SUDOERS_VISUDO=$(which visudo) SUDOERS_ORACLE_N=10000 go test -run Oracle`
-* `FuzzValidate` checks that no input can crash the validator.
+* `FuzzValidate` checks that no input can crash the validator:
+  `go test -run '^$' -fuzz FuzzValidate`
+* `TestHostileInputIsLinear` checks that validation time grows linearly with
+  input size. It depends on machine speed, so it only runs with
+  `SUDOERS_TIMING_TESTS=1`.
+
+CI (`.github/workflows/ci.yml`) runs lint, `go vet`, `govulncheck`, the tests
+under `-race` on Linux and macOS, the oracle test against Ubuntu's `visudo`, the
+timing test and a short fuzzing session.
+
+## Releasing
+
+Releases are cut by pushing a [semantic version](https://semver.org) tag from
+`main`:
+
+```
+git switch main && git pull
+git tag -a v0.1.0 -m "v0.1.0"
+git push origin v0.1.0
+```
+
+The `Release` workflow then:
+
+1. runs the full CI suite against the tagged commit;
+2. checks that the tag is on `main`;
+3. builds the `sudoers-validate` binaries with
+   [GoReleaser](https://goreleaser.com) (`.goreleaser.yaml`) and publishes them
+   on a GitHub release with a changelog and `checksums.txt`;
+4. adds signed [build provenance](https://docs.github.com/actions/security-for-github-actions/using-artifact-attestations)
+   for every archive. You can verify it with
+   `gh attestation verify <archive> --repo DanielRis/go-sudoer-validation`;
+5. asks the Go module proxy to fetch the new version so it appears on
+   pkg.go.dev.
+
+Tags with a suffix, such as `v0.2.0-rc.1`, are published as pre-releases.
+Follow semantic versioning for the library API: breaking changes need a new
+major version (and from v2 on, a `/v2` module path). To try the release build
+locally, run `goreleaser release --snapshot --clean`.
 
 ## Differences from visudo
 
