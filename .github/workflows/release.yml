@@ -52,7 +52,10 @@ jobs:
       # "go get" and pkg.go.dev see it right away.
       # The proxy escapes upper-case letters in module paths as "!" plus
       # the lower-case letter (DanielRis -> !daniel!ris).
+      # Best effort: the release is already published at this point and
+      # the proxy also fetches new versions on first use.
       - name: Publish to the Go module proxy
+        continue-on-error: true
         run: |
           module="$(go list -m)"
           escaped="$(printf '%s' "$module" | sed -E 's/([A-Z])/!\L\1/g')"
